@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форум идей</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+    <ul class="nav-container">
+        <div class="logo">
+            <img src="./photo/logo.png" alt="Логотип"/>
+        </div>
+        <li class="nav-links">
+            <a href="home.html">Главная страница</a>
+            <a href="index.html">Основная информация</a>
+            <a href="info.html">Побочная информация</a>
+            <a href="forum.html">Форум идей</a>
+        </li>
+        <li id="user-info" class="nav-user-info">
+            <!-- Элемент для отображения информации о пользователе -->
+        </li>
+        <li id="auth-buttons" class="nav-auth-buttons">
+            <button id="login-button">Войти</button>
+            <button id="register-button">Регистрация</button>
+        </li>
+        <li id="logout-container" class="nav-logout-container"> <!-- По умолчанию скрыт -->
+            <button id="logout-button">Выйти</button>
+        </li>
+    </ul>
+</nav>
+<header>
+    <h1>Форум идей</h1>
+</header>
+<!-- Модальные окна для регистрации и авторизации -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <h2>Авторизация</h2>
+        <form id="login-form">
+            <label for="login-email">Email:</label><br>
+            <input type="email" id="login-email" name="email" required><br>
+            <label for="login-password">Пароль:</label><br>
+            <input type="password" id="login-password" name="password" required><br>
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+</div>
+
+<div id="register-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('register-modal')">&times;</span>
+        <h2>Регистрация</h2>
+        <form id="register-form">
+            <label for="register-email">Email:</label><br>
+            <input type="email" id="register-email" name="email" required><br>
+            <label for="register-password">Пароль:</label><br>
+            <input type="password" id="register-password" name="password" required><br>
+            <label for="confirm-password">Подтвердите пароль:</label><br>
+            <input type="password" id="confirm-password" name="confirm" required><br>
+            <button type="submit">Регистрация</button>
+        </form>
+    </div>
+</div>
+<main>
+    <section class="content-block">
+        <h2>Поделитесь своими идеями</h2>
+        <form id="post-form">
+            <input type="text" id="username" placeholder="Ваше имя" required>
+            <textarea id="content" placeholder="Введите ваше сообщение" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+        <div id="posts"></div>
+    </section>
+</main>
+<footer>
+    <p>© 2024. Все права защищены.</p>
+</footer>
+
+<script src="forum.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
